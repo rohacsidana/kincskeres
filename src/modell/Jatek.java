@@ -8,9 +8,9 @@ public class Jatek {
 
     public Jatek() {
         ladak = new Lada[3];
-        ladak[0] = new Lada(false, "arany");
-        ladak[1] = new Lada(true, "ezüst");
-        ladak[2] = new Lada(false, "bronz");
+        ladak[0] = new Lada(false);
+        ladak[1] = new Lada(true);
+        ladak[2] = new Lada(false);
     }
 
     public Lada[] getLadak() {
