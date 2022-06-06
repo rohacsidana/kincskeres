@@ -1,5 +1,7 @@
 package modell;
 
+import gui.KincskeresGui;
+
 public class Jatek {
 
     private final Lada[] ladak;
@@ -16,6 +18,6 @@ public class Jatek {
     }
     
     public void jatekIndit(){
-        
+        new KincskeresGui().setVisible(true);
     }
 }
