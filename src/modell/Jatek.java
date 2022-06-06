@@ -18,6 +18,9 @@ public class Jatek {
     }
     
     public void jatekIndit(){
-        new KincskeresGui().setVisible(true);
+        KincskeresGui jatekGui = new KincskeresGui();
+        jatekGui.setLocationRelativeTo(null);
+        jatekGui.setVisible(true);
+        
     }
 }

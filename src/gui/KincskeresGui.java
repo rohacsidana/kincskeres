@@ -4,6 +4,7 @@
  */
 package gui;
 
+import java.awt.Component;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -44,6 +45,7 @@ public class KincskeresGui extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
 
         jButton4.setText("jButton1");
 
@@ -127,6 +129,8 @@ public class KincskeresGui extends javax.swing.JFrame {
                 .addContainerGap(27, Short.MAX_VALUE))
         );
 
+        jDesktopPane1.setBackground(new java.awt.Color(252, 231, 209));
+
         jLabel2.setText("Melyikben van a kincs?");
 
         jLabel1.setText("A 3 láda közül az egyik rejti a kincset. ");
@@ -134,9 +138,18 @@ public class KincskeresGui extends javax.swing.JFrame {
 
         jLabel6.setText("Mindegyiken van egy felirat belevésve a ládába, de csak az egyik láda állítása igaz! ");
 
+        jButton1.setBackground(new java.awt.Color(217, 195, 158));
+        jButton1.setText("Újra");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
         jDesktopPane1.setLayer(jLabel2, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(jLabel1, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jDesktopPane1.setLayer(jLabel6, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jDesktopPane1.setLayer(jButton1, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         javax.swing.GroupLayout jDesktopPane1Layout = new javax.swing.GroupLayout(jDesktopPane1);
         jDesktopPane1.setLayout(jDesktopPane1Layout);
@@ -146,15 +159,23 @@ public class KincskeresGui extends javax.swing.JFrame {
                 .addGap(34, 34, 34)
                 .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 651, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jDesktopPane1Layout.createSequentialGroup()
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 651, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton1))
                     .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 743, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jDesktopPane1Layout.setVerticalGroup(
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jDesktopPane1Layout.createSequentialGroup()
-                .addGap(12, 12, 12)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jDesktopPane1Layout.createSequentialGroup()
+                        .addGap(12, 12, 12)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jDesktopPane1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jButton1)))
                 .addGap(2, 2, 2)
                 .addComponent(jLabel6)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -197,6 +218,19 @@ public class KincskeresGui extends javax.swing.JFrame {
     private void btnEzustActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEzustActionPerformed
         kattint(evt, 2);
     }//GEN-LAST:event_btnEzustActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        btnArany.setIcon(new ImageIcon(this.getClass().getResource("/ladaKepek/lada_csukva.jpg")));
+        btnEzust.setIcon(new ImageIcon(this.getClass().getResource("/ladaKepek/lada_csukva.jpg")));
+        btnBronz.setIcon(new ImageIcon(this.getClass().getResource("/ladaKepek/lada_csukva.jpg")));
+
+        //        Component[] gombok = pnGombok.getComponents();
+        //        for (int i = 0; i < gombok.length; i++) {
+            //            gombok[i]= (JButton)gombok[i];
+            //        }
+        //
+        //setIcon(new ImageIcon(this.getClass().getResource("/ladaKepek/lada_nyitva_kinccsel.jpg"));
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     private void kattint(java.awt.event.ActionEvent evt, int hanyadik) {
         JButton gomb = (JButton) evt.getSource();
@@ -241,6 +275,7 @@ public class KincskeresGui extends javax.swing.JFrame {
     private javax.swing.JButton btnArany;
     private javax.swing.JButton btnBronz;
     private javax.swing.JButton btnEzust;
+    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton4;
     private javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JLabel jLabel1;
